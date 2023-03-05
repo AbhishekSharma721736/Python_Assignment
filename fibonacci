@@ -11,3 +11,17 @@ for i in range(2,n):
     print(c,end = " ")
     a = b
     b = c
+    
+Q2. Python Program for How to check if a given number is Fibonacci number?
+
+#A number is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square (Source: Wiki). 
+
+import math
+n = int(input("Enter number to check fibonacci number : "))
+sqrt1 = int(math.sqrt(5*n*n + 4))
+sqrt2 = int(math.sqrt(5*n*n - 4))
+
+if sqrt1*sqrt1 == (5*n*n + 4) or sqrt2*sqrt2 == (5*n*n - 4):
+    print("Given number is a Fibonacci number")
+else:
+    print("not a fibonacci number")
