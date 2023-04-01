@@ -68,4 +68,10 @@ else:
     
     
    
-Q8. Write a Python program to input any alphabet and check whether it is vowel or consonant   
+Q8. Write a Python program to input any alphabet and check whether it is vowel or consonant
+
+c = input("Enter a character: ")
+if (c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u'):
+    print("Vowel")
+else:
+    print("consonant")
