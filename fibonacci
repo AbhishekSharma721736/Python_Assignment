@@ -75,3 +75,340 @@ if (c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u'):
     print("Vowel")
 else:
     print("consonant")
+    
+    
+
+10. Write a Python program to input marks of five subjects Physics, Chemistry, Biology,
+Mathematics and Computer. Calculate percentage and grade according to
+following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F
+
+sum = 0
+for i in range(5):
+    marks = int(input("Enter mark of subject: "))
+    sum += marks
+
+per = sum/5
+if per >= 90:
+    print("Grade A")
+elif per >= 80:
+    print("Grade B")
+elif per >= 70:
+    print("Grade C")
+elif per >= 60:
+    print("Grade D")
+elif per >= 40:
+    print("Grade E")
+elif per < 40:
+    print("Grade F")
+
+
+
+11. Write a Python program to input basic salary of an employee and calculate its Gross
+salary according to following:
+Basic Salary <= 10000 : HRA = 20%, DA = 80%
+Basic Salary <= 20000 : HRA = 25%, DA = 90%
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+basic_salary = float(input("Enter Basic Salary: "))
+
+if basic_salary <= 10000:
+    hra = basic_salary * 0.2
+    da = basic_salary * 0.8
+elif basic_salary <= 20000:
+    hra = basic_salary * 0.25
+    da = basic_salary * 0.9
+else:
+    hra = basic_salary * 0.3
+    da = basic_salary * 0.95
+
+gross_salary = basic_salary + hra + da
+
+print(f"Gross Salary: {gross_salary}")
+
+
+
+12. Write a Python program to input electricity unit charges and calculate total electricity
+bill according to the given condition:
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill
+
+def calculate_bill(units):
+    if units <= 50:
+        return units * 0.50
+    elif units <= 150:
+        return 25 + ((units - 50) * 0.75)
+    elif units <= 250:
+        return 100 + ((units - 150) * 1.20)
+    else:
+        return 220 + ((units - 250) * 1.50)
+
+units = int(input("Enter the number of units: "))
+bill = calculate_bill(units)
+total_bill = bill + (bill * 0.2)
+print(f"Total electricity bill (including surcharge): {total_bill:.2f}")
+
+
+
+13. Write a Python program to print all alphabets from a to z.  using while Loop
+
+# initialize a variable with 'a'
+alphabet = 'a'
+
+# loop through all alphabets
+while alphabet <= 'z':
+    print(alphabet, end=' ')
+    alphabet = chr(ord(alphabet) + 1)
+
+
+
+14. Write a Python program to find first and last digit of a number.
+
+num = int(input("Enter a digit: "))
+lastdigit = num%10
+while(num>0):
+    firstdigit = num%10
+    num = num//10
+
+print(firstdigit," ",lastdigit)
+
+
+
+15. Write a Python program to calculate sum of digits of a number.
+
+num = int(input("Enter a number : "))
+sum = 0
+while(num>0):
+    sum += num%10
+    num = num//10
+
+print(sum)
+
+
+
+16. Write a Python program to calculate product of digits of a number.
+
+num = int(input("Enter a number : "))
+pro = 1
+while(num>0):
+    pro *= num%10
+    num = num//10
+
+print(pro)
+
+
+
+17. Write a Python program to enter a number and print its reverse.
+
+num = int(input("Enter a number: "))
+reverse = 0
+
+while num > 0:
+    remainder = num % 10
+    reverse = (reverse * 10) + remainder
+    num = num // 10
+
+print("The reverse of the number is:", reverse)
+
+
+
+18. Write a Python program to check whether a number is palindrome or not.
+num = int(input("Enter a number: "))
+temp = num
+reverse = 0
+
+while num > 0:
+    remainder = num % 10
+    reverse = (reverse * 10) + remainder
+    num = num // 10
+
+if temp == reverse:
+    print("Given Number is palindrome")
+else:
+    print("Given number is not  a palindrome")
+
+
+
+19. Write a Python program to find all factors of a number.
+num = int(input("Enter a number: "))
+for i in range(1,num):
+    if num%i == 0:
+        print(i)
+
+
+
+20. Write a Python program to calculate factorial of a number
+
+num = int(input("Enter a number: "))
+
+fact = 1
+for i in range(1,num+1):
+    fact *= i
+
+print("Factorial of given number is ", fact)
+
+
+
+21. Write a Python program to find HCF (GCD) of two numbers.
+22. Write a Python program to find LCM of two numbers.
+
+num = int(input("Enter number 1: "))
+num2 = int(input("Enter number 2: "))
+max = 0
+if num > num2:
+    max = num
+else:
+    max = num2
+hcf = 0
+for i in range(1,max):
+    if num%i == 0 and num2%i == 0:
+        hcf = i 
+
+print(hcf)   
+lcm = (num*num2)/hcf
+print(lcm)
+
+
+
+23. Write a Python program to check whether a number is Prime number or not.
+
+num = int(input("Enter number to check prime or not: "))
+flag = 1
+for i in range(2,num):
+    if num%i == 0:
+        flag = 0
+
+if flag == 1:
+    print("Number is Prime")
+else:
+    print("Number is NOt prime")
+
+
+
+24. Write a Python program to print all Prime numbers between 1 to n
+25. Write a Python program to find sum of all prime numbers between 1 to n.
+
+n = int(input("Enter n: "))
+sum = 0
+for i in range(1,n+1):
+    flag = 1
+    for j in range(2,i):
+        if i%j == 0:
+            flag = 0
+    if flag == 1:
+        sum += i
+        print(i,end=" ")
+
+print("\n",sum)
+
+
+
+26. Write a Python program to find all prime factors of a number
+num = int(input("Enter a num: "))
+for i in range(2,num):
+    if num%i == 0:
+        flag = 1
+        for j in range(2,i):
+            if i%j == 0:
+                flag = 0 
+        if flag == 1:
+            print(i,end=" ")
+
+
+
+27. Write a Python program to check whether a number is Armstrong number or not.
+
+num = int(input("Enter number to check: "))
+temp = num
+count = 0
+while temp>0:
+    temp = temp//10
+    count = count + 1
+
+temp = num
+sum = 0
+while temp>0:
+    digit = temp%10
+    sum = sum + pow(digit,count)
+    temp = temp//10
+
+if sum == num:
+    print("Given number is Armstrong")
+else:
+    print("Given number is not Armstrong")
+
+
+
+28. Write a Python program to print all Armstrong numbers between 1 to n
+
+n = int(input("Enter n: "))
+for i in range(1,n+1):
+    num = i
+    temp = num
+    count = 0
+    while temp>0:
+        temp = temp//10
+        count = count + 1
+
+    sum = 0
+    temp = num
+    while temp>0:
+        digit = temp%10
+        sum = sum + pow(digit,count)
+        temp = temp//10
+
+    if sum == num:
+        print(num,end=" ")
+
+
+
+29. Write a Python program to check whether a number is Perfect number or not.
+
+n = int(input("Enter any number: "))
+sum1 = 0
+for i in range(1, n):
+    if(n % i == 0):
+        sum1 = sum1 + i
+if (sum1 == n):
+    print("The number is a Perfect number!")
+else:
+    print("The number is not a Perfect number!")
+
+
+
+30. Write a Python program to check whether a number is Strong number or not (Also 
+known as Robinson number/ Krishnamurthy Number / Peterson number.)
+Number = int(input("Enter any Number: "))
+Sum = 0
+Temp = Number
+while(Temp > 0):
+    Factorial = 1
+    Reminder = Temp % 10
+    for i in range(1, Reminder + 1):
+        Factorial = Factorial * i
+    Sum = Sum + Factorial
+    Temp = Temp // 10
+print("\nSum of Factorials of a Given Number %d = %d" %(Number, Sum))
+if (Sum == Number):
+    print("%d is a Strong Number" %Number)
+else:
+    print("%d is not a Strong Number" %Number)
+
+
+
+31. Python program to check whether the string is Symmetrical or Palindrome
+String = input("Please enter your own String : ")
+String = String.casefold()
+Rev_String = reversed(String)
+if list(String) == list(Rev_String):
+    print("The Given String is a Palindrome")
+else:
+    print("The Given String is not a Palindrome")
